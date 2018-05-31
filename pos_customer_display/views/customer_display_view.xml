@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="pos_config_view_form" model="ir.ui.view">
+        <field name="name">pos_customer_display.pos.config.form</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='iface_cashdrawer']/parent::div" position="after">
+                <div class="row">
+                    <label string="Customer Display" for="iface_customer_display" class="col-md-3 o_light_label"/>
+                    <field name="iface_customer_display"/>
+                </div>
+                <div class="row">
+                    <label string="Customer Display Line Length" for="customer_display_line_length" class="col-md-3 o_light_label"/>
+                    <field name="customer_display_line_length"/>
+                </div>
+            </xpath>
+            <xpath expr="//div[@id='receipt']" position="after">
+                <h2>Customer Display</h2>
+                <div class="row mt16 o_settings_container" id="customer_display">
+                    <div id="next_top_line" class="col-xs-12 col-md-6 o_setting_box" groups="base.group_no_one">
+                        <div class="o_setting_right_pane">
+                            <label for="customer_display_msg_next_l1"/>
+                            <field name="customer_display_msg_next_l1"/>
+                        </div>
+                    </div>
+                    <div id="next_bottom_line" class="col-xs-12 col-md-6 o_setting_box" groups="base.group_no_one">
+                        <div class="o_setting_right_pane">
+                            <label for="customer_display_msg_next_l2"/>
+                            <field name="customer_display_msg_next_l2"/>
+                        </div>
+                    </div>
+                    <div id="closed_top_line" class="col-xs-12 col-md-6 o_setting_box" groups="base.group_no_one">
+                        <div class="o_setting_right_pane">
+                            <label for="customer_display_msg_closed_l1"/>
+                            <field name="customer_display_msg_closed_l1"/>
+                        </div>
+                    </div>
+                    <div id="closed_bottom_line" class="col-xs-12 col-md-6 o_setting_box" groups="base.group_no_one">
+                        <div class="o_setting_right_pane">
+                            <label for="customer_display_msg_closed_l2"/>
+                            <field name="customer_display_msg_closed_l2"/>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
